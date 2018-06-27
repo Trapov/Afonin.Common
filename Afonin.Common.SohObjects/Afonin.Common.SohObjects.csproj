@@ -2,13 +2,9 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="JetBrains.Annotations" Version="11.1.0" />
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Afonin.Common.ClrTypes\Afonin.Common.ClrTypes.csproj" />
@@ -19,4 +15,5 @@
       <HintPath>..\Afonin.Common.ClrTypes\libs\EntityPtr.dll</HintPath>
     </Reference>
   </ItemGroup>
+
 </Project>

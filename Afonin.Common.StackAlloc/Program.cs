@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Runtime.CLR;
 
+using Afonin.Common.ClrTypes;
+
 using JetBrains.Annotations;
 
 namespace Afonin.Common.StackAlloc
@@ -26,7 +28,7 @@ namespace Afonin.Common.StackAlloc
                 data[3] = 10;
                 Console.WriteLine(
                     $"{person.X}, {person.Y}, \n Type: {person.GetType()} \n IsValueType: {person.GetType().IsValueType}");
-          
+
                 data[3] = 20;
                 Console.WriteLine($"{person.X}, {person.Y}");
 
@@ -38,12 +40,12 @@ namespace Afonin.Common.StackAlloc
 
         private static unsafe void SetType<TType>(object obj)
         {
-            SetMethodTable(obj, (MethodTableInfo*)typeof(TType).TypeHandle.Value.ToPointer());
+            SetMethodTable(obj, (MethodTableInfo*) typeof(TType).TypeHandle.Value.ToPointer());
         }
 
         private static unsafe void SetMethodTable(object obj, MethodTableInfo* methodTable)
         {
-            var contents = (EntityInfo*)EntityPtr.ToPointer(obj);
+            var contents = (EntityInfo*) EntityPtr.ToPointer(obj);
             contents->MethodTable = methodTable;
         }
 

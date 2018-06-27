@@ -1,10 +1,11 @@
 ﻿using System.Runtime.InteropServices;
+
 using JetBrains.Annotations;
 
-namespace Afonin.Common.StackAlloc
+namespace Afonin.Common.ClrTypes
 {
-    [StructLayout(LayoutKind.Explicit)]
     [PublicAPI]
+    [StructLayout(LayoutKind.Explicit)]
     public unsafe struct EntityInfo
     {
         [FieldOffset(0)]
