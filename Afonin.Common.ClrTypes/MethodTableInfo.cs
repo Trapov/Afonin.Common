@@ -32,7 +32,7 @@ namespace Afonin.Common.ClrTypes
         [FieldOffset(16)]
         public readonly MethodTableInfo* ParentTable;
 
-        #endregion
+        #endregion Basic Type Info
 
         [FieldOffset(20)]
         public readonly ObjectTypeInfo* ModuleInfo;
